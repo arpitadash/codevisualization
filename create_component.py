@@ -10,8 +10,8 @@ import re
 import pyvis._version
 import networkx as nx
 
-root = '/Users/arpita.dash/flippie-code-repo/ekart-cl-ui'
-Savefolder = '/Users/arpita.dash/projectSetup/mysite/'
+root = './ekart-cl-ui'
+Savefolder = './'
 
 def createColorDict(contentList, interestedFolder):
     colorDict = {}
@@ -246,7 +246,7 @@ def createGraph(dictNodes, importDictFiles, nodeGroup, filename):
     for (ind, node )in enumerate(dictNodes):
         G.add_node(node, label=importDictFiles[node]['label'], title=node, group=nodeGroup[node]['group'])
         if 'link' in importDictFiles[node]:
-            G.nodes[node]['title'] = '<a href="{}">{}</a>'.format(importDictFiles[node]['link'], node)
+            G.nodes[node]['title'] = '<a href="{}" target="_blank">{}</a>'.format(importDictFiles[node]['link'], node)
         connectedNodes = list(importDictFiles[node]['import'].keys())
         for othernode in importDictFiles[node]['import']:
             G.add_edge(othernode,node,title=','.join(importDictFiles[node]['import'][othernode]), value=len(importDictFiles[node]['import'][othernode]))
@@ -279,7 +279,7 @@ if __name__ == '__main__':
     interestedFolderInp=input('Any other interactions you want to visualize?(y/n)')
     interestedFolderB = interestedFolder
     if(interestedFolderInp=='y'):
-        interestedFolderB=input('What is the interaction folder name?(y/n)')
+        interestedFolderB=input('What is the interaction folder name?')
     contentList = os.listdir(root+interestedFolder)
     colorDict = createColorDict(contentList, interestedFolder)
     [importDictFiles, dictNodes, nodeGroup, nodeColorDict] = createDict(root,interestedFolder, colorDict, interestedFolder, interestedFolderB)
