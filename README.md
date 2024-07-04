@@ -16,3 +16,6 @@ pip3 install pyvis
     'What is the interaction folder name?' - the absolute path of the folder: eg.:src/widgets
 4. After the file is successfully run, a file called nx_appName.html will be created. Open that on chrome.
 
+Examples of how the visualization will look - 
+<img width="1029" alt="Screenshot 2024-07-04 at 1 01 26 PM" src="https://github.com/arpitadash/codevisualization/assets/22210816/56603c14-87c3-4cd6-a5c4-6dd414e6862f">
+<img width="1029" alt="Screenshot 2024-07-04 at 1 01 39 PM" src="https://github.com/arpitadash/codevisualization/assets/22210816/ce7dce25-4402-4e21-a3a0-9011acbd4dc8">
